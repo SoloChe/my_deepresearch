@@ -1,7 +1,7 @@
 from ..llm.llm import OpenAIClient, AnthropicClient
 from ..state.state import State
 from typing import Union
-from ..agent.react_agent import ReactAgent
+from ..agents.react_agent import ReactAgent
 from ..tools.python_repl import PythonREPLTool
 
 

@@ -20,6 +20,13 @@ def construct_messages(
             messages.append(message)
     return messages
 
+def get_client(model_name: str):
+    if model_name.startswith("gpt"):
+        return OpenAIClient(model=model_name)
+    elif model_name.startswith("claude"):
+        return AnthropicClient(model=model_name)
+    else:
+        raise ValueError(f"Model {model_name} not supported")
 
 class OpenAIClient:
     """Example OpenAI client for the React agent."""

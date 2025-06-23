@@ -1,0 +1,10 @@
+# nanoDeepResearch
+Copied from [nanoDeepResearch](https://github.com/liyuan24/nanoDeepResearch) for the purpose of learning. 
+
+Added `uv` for managing the virtual environment. You can use `uv sync` to synchronize the environment. Then, `uv run python -m nanoDeepResearch.main \
+--query "what is the area(land+water) ratio between the largest and smallest states in the US"` for testing.
+
+Some API keys are required to run the project, such as openai, tavily and jina. You can `export API_KEY=your_key` to set the environment variable.
+
+## TODO
+1. Preparing the MCP for tool use.

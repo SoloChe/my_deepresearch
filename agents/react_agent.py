@@ -3,7 +3,7 @@ import json
 from typing import Dict, List, Any, Optional, Union
 from dataclasses import dataclass, field
 from ..tools import Tool
-from ..prompt.utils import load_prompt
+from ..prompts.utils import load_prompt
 from ..state.state import State
 
 

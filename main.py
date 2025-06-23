@@ -15,9 +15,3 @@ if __name__ == "__main__":
     print("Report:")
     print(state_machine.state.get("report"))
 
-"""
-```bash
-python3 -m nanoDeepResearch.main \
---query "what is the area(land+water) ratio between the largest and smallest states in the US"
-```
-"""
