@@ -3,6 +3,10 @@ from typing import Union
 from ..state.state import State
 from ..llm.llm import OpenAIClient
 from ..agents.planner import Planner
+from ..agents.researcher import Researcher
+from ..agents.coder import Coder
+from ..agents.reporter import Reporter
+
 
 class Node(Enum):
     """Enumeration of possible states in the workflow."""
@@ -96,7 +100,7 @@ class StateMachine:
                 break
         input = f"#Task\n\n##title\n\n{step.title}\n\n##description\n\n{step.description}\n\n##locale\n\n{self.state.get('locale', 'en-US')}"
         res = self.researcher.research(input, self.state)
-        step.execution_res = res['messages'][-1]
+        step.execution_res = res["messages"][-1]
         return Node.RESEARCH_TEAM
 
     def _code_action(self) -> None:
@@ -108,7 +112,7 @@ class StateMachine:
                 break
         input = f"#Task\n\n##title\n\n{step.title}\n\n##description\n\n{step.description}\n\n##locale\n\n{self.state.get('locale', 'en-US')}"
         res = self.coder.code(input, self.state)
-        step.execution_res = res['messages'][-1]
+        step.execution_res = res["messages"][-1]
         return Node.RESEARCH_TEAM
 
     def _reporter_action(self) -> None:

@@ -5,6 +5,7 @@ from ..agent.react_agent import ReactAgent
 from ..tools.search import TavilySearchTool
 from ..tools.crawler import CrawlerTool
 
+
 class Researcher:
     def __init__(self, llm_client: Union[OpenAIClient, AnthropicClient]):
         researcher_tools = [TavilySearchTool(), CrawlerTool()]
