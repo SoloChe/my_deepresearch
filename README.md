@@ -7,7 +7,7 @@ You can use
 
 to synchronize the environment. For testing,
 
-`uv run python -m nanoDeepResearch.main --query "your query here" ` 
+`uv run python -m myDeepResearch.main --query "your query here" ` 
 
 Some API keys are required to run the project, such as openai, tavily and jina. You can 
 

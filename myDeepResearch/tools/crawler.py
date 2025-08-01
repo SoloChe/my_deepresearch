@@ -5,9 +5,13 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 class CrawlerTool(Tool):
     def __init__(self):
-        super().__init__("crawl", "Use this to crawl a url and get a readable content in markdown format.")
+        super().__init__(
+            "crawl",
+            "Use this to crawl a url and get a readable content in markdown format.",
+        )
 
     def __call__(self, url: str) -> str:
         """Use this to crawl a url and get a readable content in markdown format."""

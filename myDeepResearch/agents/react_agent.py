@@ -75,7 +75,7 @@ class ReactAgent:
 Human query: {agent_input}
 Follow this format:
 Thought: Think about the current situation and what to do
-Action: The action to take (must be one of: {', '.join([tool.name for tool in self.tools])})
+Action: The action to take (must be one of: {", ".join([tool.name for tool in self.tools])})
 Action Input: The input to the action (can be a string or a JSON object)
 Observation: The result of the action
 ... (this Thought/Action/Observation cycle can repeat multiple times)

@@ -1,12 +1,12 @@
 import os
-from typing import List, Dict, Union
+from typing import List, Dict, Union, Optional
 from ..state.state import State
 
 
 def construct_messages(
     prompt: Union[str, List[Dict[str, str]]],
     system_prompt: str = "",
-    state: State = None,
+    state: Optional[State] = None,
 ) -> List[Dict[str, str]]:
     messages = []
     if system_prompt:
@@ -20,6 +20,7 @@ def construct_messages(
             messages.append(message)
     return messages
 
+
 def get_client(model_name: str):
     if model_name.startswith("gpt"):
         return OpenAIClient(model=model_name)
@@ -27,6 +28,7 @@ def get_client(model_name: str):
         return AnthropicClient(model=model_name)
     else:
         raise ValueError(f"Model {model_name} not supported")
+
 
 class OpenAIClient:
     """Example OpenAI client for the React agent."""
@@ -48,7 +50,7 @@ class OpenAIClient:
         self,
         prompt: Union[str, List[Dict[str, str]]],
         system_prompt: str = "",
-        state: State = None,
+        state: Optional[State] = None,
         stop: List[str] = [],
     ) -> str:
         """Generate a response from the OpenAI API.
@@ -67,6 +69,8 @@ class OpenAIClient:
             stop=stop,
         )
         return response.choices[0].message.content
+
+
 class AnthropicClient:
     """Example Anthropic client for the React agent."""
 
@@ -87,7 +91,7 @@ class AnthropicClient:
         self,
         prompt: Union[str, List[Dict[str, str]]],
         system_prompt: str = "",
-        state: State = None,
+        state: Optional[State] = None,
         stop: List[str] = [],
     ) -> str:
         """Generate a response from the Anthropic API.

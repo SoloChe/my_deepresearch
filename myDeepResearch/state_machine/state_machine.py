@@ -1,7 +1,7 @@
 from enum import Enum, auto
 from typing import Union
 from ..state.state import State
-from ..llm.llm import OpenAIClient
+from ..llm.llm import OpenAIClient, AnthropicClient
 from ..agents.planner import Planner
 from ..agents.researcher import Researcher
 from ..agents.coder import Coder
@@ -25,7 +25,7 @@ class StateMachine:
     def __init__(
         self,
         human_query: str,
-        llm_client: Union[OpenAIClient],
+        llm_client: Union[OpenAIClient, AnthropicClient],
     ):
         # Define the possible state transitions
         self.transitions = {

@@ -1,6 +1,3 @@
-from typing import Callable, Any
-
-
 class Tool:
     """Tool that the agent can use."""
 

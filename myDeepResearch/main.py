@@ -14,4 +14,3 @@ if __name__ == "__main__":
     state_machine.run_until_end()
     print("Report:")
     print(state_machine.state.get("report"))
-
